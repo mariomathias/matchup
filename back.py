@@ -18,6 +18,11 @@ def createUser(user):
     c.execute(sql)
     db.commit()
 
+def getUserEmail(email):
+    c = db.cursor()
+    c.execute(f"select * from usuario where email = '{email}'")
+    return c.fetchone()
+
 def getUsers():
     c = db.cursor()
     c.execute("select * from usuario")
@@ -28,21 +33,44 @@ def getGame(id):
     c.execute(f"select * from games where id = {id}")
     return c.fetchone()
 
+def getGames():
+    c = db.cursor()
+    c.execute(f"select * from games")
+    return c.fetchall()
+
+def getUsuarioGame(id):
+    c = db.cursor()
+    c.execute(f"select u.nome,g.nome from game g join usuario u on id u.id = {id} join usuario_game ug on ug.id_game = g.id")
+    return c.fetchall()
+
 @cross_origin()
 @app.get("/usuario")
-def getUsuario():
+def get_user_controller():
     return flask.jsonify(getUsers())
 
 @cross_origin()
 @app.post("/usuario")
-def postUsuario():
+def post_user_controller():
+    if (getUserEmail(flask.request.json["email"]) != None):
+        return "Email já cadastrado!"
     createUser(flask.request.json)
     return ""
 
 @cross_origin()
 @app.get("/images/<id>")
-def getImage(id):
+def get_game_controller(id):
     b = getGame(id)
     return flask.jsonify({"name":b[1],"img":b[2]})
+
+@cross_origin()
+@app.get("/game")
+def get_games_controller():
+    return flask.jsonify(getGames())
+
+@cross_origin()
+@app.get("/game/<id>")
+def get_usuario_game(id):
+    return flask.jsonify(getUsuarioGame(id))
+
 
 app.run()

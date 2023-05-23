@@ -1,8 +1,8 @@
 //<img src="../imgs/overwatch.jpg" class="rounded" alt="Overwatch Banner" width="100px" height="120px">
 
-async function loadImage() {
+async function loadGames() {
     let data = null
-    await fetch('http://localhost:5000/images/0')
+    await fetch('http://localhost:5000/images/1')
     .then(response => response.json())
     .then(d => { data = d; console.log(d)})
     console.log(data)
@@ -16,4 +16,4 @@ async function loadImage() {
     imgs.insertBefore(img,imgs.firstChild)
 }
 
-loadImage()
+loadGames()
