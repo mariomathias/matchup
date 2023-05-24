@@ -1,3 +1,7 @@
+.desc {
+    font-size: 20px;
+}
+
 section {
     background-repeat: no-repeat;
 }
@@ -10,8 +14,18 @@ section {
     background: -webkit-linear-gradient(to right, #004221, #00A853);
 
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, #004221, #00A853);
+    background: linear-gradient(to right, #489755, #489755);
 }
+
+.logo {
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .logo:hover {
+    transform: scale(1.1);
+  }
 
 @media (min-width: 768px) {
     .gradient-form {
