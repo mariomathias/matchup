@@ -18,5 +18,5 @@ async function createUser() {
             alert(m)
             return
         }
-        window.location.href = "../pages/choose-game.html"
+        window.location.href = "../pages/escolher-jogo.html"
 }

@@ -1,76 +1,117 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <!-- Meta tags Obrigatórias -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html lang="en">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title>MATCHUP home</title>
     <link rel="stylesheet" href="styles/index.css">
-    <title>MATCHUP</title>
-  </head>
-  <body>
-    <section class="h-100 gradient-form" style="background-color: #001d0e;">
-      <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col-xl-10">
-            <div class="card rounded-3 text-black">
-              <div class="row g-0">
-                <div class="col-lg-6">
-                  <div class="card-body p-md-5 mx-md-4">
-    
-                    <div class="text-center">
-                      <img src="imgs/matchup-logo.png" style="width: 185px;" alt="logo">
-                      <h4 class="mt-1 mb-5 pb-1">Bem-vindo ao</h4>
+</head>
+
+<body style="background-color: #dfffde;">
+    <nav class="fixed-top" style="background-color: rgb(17, 41, 22);">
+        <header>
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-1">
+                        <h3 style="color:rgb(140, 255, 136);">MATCHUP</h3> 
                     </div>
-    
-                    <form>
-                      <p> Faça login na sua conta</p>
-    
-                      <div class="form-outline mb-2">
-                        <input type="email" id="usuario" class="form-control"/>
-                        <label class="form-label" for="form2Example11">Username</label>
-                      </div>
-    
-                      <div class="form-outline mb-2">
-                        <input type="password" id="senha" class="form-control" />
-                        <label class="form-label" for="form2Example22">Senha</label>
-                      </div>
-
-                      <div class="d-flex align-items-center justify-content-center pb-2">
-                        <a class="btn btn-success" href="pages/feed.html" role="button">Entrar</a>
-                      </div>
-
-                      <div class="d-flex align-items-center justify-content-center pb-4">
-                        <p class="mb-0 me-2 mt-2">Não possui uma conta? <a href="pages/registro.html">Criar Conta</a></p>
-                      </div>
-    
-                    </form>
-    
-                  </div>
+                    <div class="col-9"></div>
+                    <div class="col-2">
+                        <a class="btn btn-success" href="pages/login.html" role="button">Entrar</a>
+                        <a class="btn btn-outline-success" href="pages/registro.html" role="button">Criar</a>
+                    </div>
                 </div>
-                <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
-                  <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                    <h1 class="mb-4">O que é o Matchup?</h1>
-                    <h4 class="mb-0"> <small>
-                      O Matchup objetiva buscar jogadores com gostos similares à você.
-                      Escolha seus jogos, ache alguém e dê match! É simples e prático.
-                      </small>
-                    </h4>
-                  </div>
+            </div>
+        </header>
+    </nav>
+
+    <main role="main">
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="first-slide" src="imgs/homepage.png" alt="First slide">
+              <div class="container">
+                <div class="carousel-caption text-left">
+                  <h1 class="title mb-5">Bem-vindos à <div class="matchup" style="color:rgb(176, 255, 189); font-size: 40pt;">MATCHUP</div></h1>
+                  <p class="title">O lugar certo para buscar pessoas com os mesmos interesses em jogos que você.</p>
+                  <p><a class="btn btn-lg btn-primary meu-botao" href="pages/login.html" role="button">Entre agora</a></p>
+                  <p class="arrow"><a href="#marketing">
+                    <svg fill="#ffffff" height="30px" width="30px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"></path> </g></svg>
+                  </a></p>
                 </div>
               </div>
             </div>
-          </div>
         </div>
-      </div>
-    </section>
+  
+  
+        <!-- Marketing messaging and featurettes
+        ================================================== -->
+        <!-- Wrap the rest of the page in another container to center all the content. -->
+        <div id="marketing"></div>
+        <div class="container marketing" style="margin-top: 5rem;">
+          <div class="row featurette my-5">
+            <div class="col-md-7">
+              <h2 class="featurette-heading">Problemas na ranqueada sozinho?</h2>
+              <p class="lead">Ter um ou mais parceiros juntos vai te ajudar a parar o estresse da falta de comunicação e em alcançar aquele ranque que tanto deseja.</p>
+            </div>
+            <div class="col-md-5">
+              <img class="featurette-image img-fluid mx-auto rounded" src="imgs/lolrage.gif" alt="Image 1">
+            </div>
+          </div>
+  
+          <hr class="featurette-divider">
+  
+          <div class="row featurette my-5">
+            <div class="col-md-7 order-md-2">
+              <h2 class="featurette-heading" style="text-align: right;">Sozinho no seu jogo casual favorito?</h2>
+              <p class="lead" style="text-align: right;">Se sua experiência com o jogo foi boa, imagina jogando com amigos? No MATCHUP, você encontra fácil.</p>
+            </div>
+            <div class="col-md-5 order-md-1">
+              <img class="featurette-image img-fluid mx-auto rounded" src="imgs/stardewvalley.gif" alt="Image 2">
+            </div>
+          </div>
+  
+          <hr class="featurette-divider">
+  
+          <div class="row featurette my-5">
+            <div class="col-md-7">
+              <h2 class="featurette-heading">Converse sobre seus interesses</h2>
+              <p class="lead">No MATCHUP, não existe impecilho para você finalmente falar sobre seus jogos favoritos. É fácil e rápido.</p>
+            </div>
+            <div class="col-md-5">
+              <img class="featurette-image img-fluid mx-auto rounded" src="imgs/futaba.gif" alt="Image 3">
+            </div>
+          </div>
+  
+          <hr class="featurette-divider">
+  
+          <!-- /END THE FEATURETTES -->
+  
+        </div><!-- /.container -->
+  
+  
+        <!-- FOOTER -->
+        <footer class="container mt-4">
+          <p class="float-right"><a href="#">Back to top</a></p>
+          <p>&copy; 2023-2023 Marocas, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </footer>
+      </main>
 
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
 </html>
