@@ -29,6 +29,12 @@ body {
   }
 }
 
+@media (max-width: 1366px) {
+  .botao {
+    font-size: 15px;
+  }
+}
+
 .meu-botao {
   padding: 10px 20px;
   background-color: #0b5bd3b0;
