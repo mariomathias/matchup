@@ -1,13 +1,9 @@
-const sobre = document.querySelector('#sobre');
-const localizacao = document.querySelector('#localizacao');
-const email = document.querySelector('#email');
 const image = document.querySelector('#image');
+const nome = document.querySelector('#nome');
 
 function updateUser(user) {
-  sobre.innerHTML = user[4];
-  localizacao.innerHTML = user[6];
-  email.innerHTML = user[2];
   image.src = '../imgs/'+user[7]+'.png';
+  nome.innerHTML = user[1]
 }
 
 function obterUsuario() {
@@ -29,9 +25,4 @@ function obterUsuario() {
     });
   }
 
-function logout() {
-  localStorage.removeItem('token');
-  window.location.href = 'login.html'
-}
-
-obterUsuario() 
+obterUsuario()

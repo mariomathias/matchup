@@ -23,16 +23,39 @@ def generate_token(userid):
 
 def create_user(user):
     db = connect_db()
-    sql = f"insert into usuario (nome, username, email, senha, foto) values ('{user['name']}','{user['username']}','{user['email']}','{user['password']}', 'iconpadrao.png')"
+    sql = f"insert into usuario (nome, username, email, senha, foto) values ('{user['name']}','{user['username']}','{user['email']}','{user['password']}', 'iconpadrao')"
     c = db.cursor()
     c.execute(sql)
     db.commit()
     c.close()
     db.close()
 
-def update_user(user):
+def update_user(userid, user):
+    updates = []
+    name = user.get('name')
+    if name != None: updates.append(f"nome='{user['name']}'")
+    sobre = user.get('sobre')
+    if sobre != None: updates.append(f"descricao='{user['sobre']}'")
+    username = user.get('username')
+    if username != None: updates.append(f"username='{user['username']}'")
+    email = user.get('email')
+    if email != None: updates.append(f"email='{user['email']}'")
+    senha = user.get('senha')
+    if senha != None: updates.append(f"senha='{user['senha']}'")
+    celular = user.get('celular')
+    if celular != None: updates.append(f"celular='{user['celular']}'")
+    endereco = user.get('endereco')
+    if endereco != None: updates.append(f"endereco='{user['endereco']}'")
+    discord = user.get('discord')
+    if discord != None: updates.append(f"discord='{user['discord']}'")
+    twitter = user.get('twitter')
+    if twitter != None: updates.append(f"twitter='{user['twitter']}'")
+    instagram = user.get('instagram')
+    if instagram != None: updates.append(f"instagram='{user['instagram']}'")
+    if len(updates) < 1:
+        return
     db = connect_db()
-    sql = f"update usuario set nome='{user['name']}', sobre='{user['about']}' username='{user['username']}', email='{user['email']}', senha='{user['password']}', celular='{user['celular']}', endereco='{user['endereco']}', discord='{user['discord']}', twitter='{user['twitter']}', instagram  where id_usuario={user['id']}"
+    sql = f"update usuario set {','.join(updates)} where id_usuario={userid}"
     c = db.cursor()
     c.execute(sql)
     db.commit()
@@ -147,13 +170,14 @@ def app_post_login():
 
 @cross_origin()
 @app.put("/usuario")
-def app_put_user(user):
+def app_put_user():
     token = flask.request.headers.get("Authorization", "")
     if token == "":
         return "", 498
     try:
-        jwt.decode(token, jwtpassword, algorithms=["HS256"])
-        update_user(flask.request.json)
+        token = jwt.decode(token, jwtpassword, algorithms=["HS256"])
+        userid = token.get("userid")
+        update_user(userid, flask.request.json)
         return '', 204
     except:
         return "", 498

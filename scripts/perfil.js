@@ -5,7 +5,7 @@ const twittertag = document.querySelector("#twitter")
 const instagramtag = document.querySelector("#instagram")
 const imgperfiltag = document.querySelector("#imgperfil")
 const nametag = document.querySelectorAll("#name")
-const sobretag = document.querySelectorAll("#sobrenome")
+const sobretag = document.querySelectorAll("#sobre")
 const emailtag = document.querySelectorAll("#email")
 const celulartag = document.querySelectorAll("#celular")
 const enderecotag = document.querySelectorAll("#endereco")
@@ -45,6 +45,7 @@ async function obterUsuario() {
     })
     .then(response => response.json())
     .then(data => {
+        console.log(data)
         nametag.forEach(nome => nome.innerHTML = data[1])
         emailtag.forEach(email => email.innerHTML = data[2])
         sobretag.forEach(sobrenome => sobrenome.innerHTML = data[4])
@@ -62,24 +63,6 @@ async function obterUsuario() {
   }
 
 obterUsuario() 
-
-async function loadGames() {
-    let data = null
-    await fetch('http://localhost:5000/images/1')
-    .then(response => response.json())
-    .then(d => { data = d; console.log(d)})
-    console.log(data)
-    const imgs = document.querySelector("#images")
-    const img = document.createElement("img")
-    img.src = data.img
-    img.style.width = "100px"
-    img.style.height = "120px"
-    img.classList.add("rounded")
-    img.alt = data.name
-    imgs.insertBefore(img,imgs.firstChild)
-}
-
-loadGames()
 
 function uploadImage() {
     const fileInput = document.getElementById('uploadimg');
@@ -103,9 +86,9 @@ function uploadImage() {
         })
           .then(response => {
             if (response.ok) {
-              console.log('Image uploaded successfully.');
+              alert('Image uploaded successfully.');
             } else {
-              console.log('Image upload failed.');
+              alert('Image upload failed.');
             }
           })
           .catch(error => {
